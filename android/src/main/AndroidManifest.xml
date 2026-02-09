@@ -1,6 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
   package="io.github.edufolly.flutterbluetoothserial">
-  <!-- Permissions for Android 11 and below -->
+  <!-- Permissions for Android 11 and below (API level 30 and earlier) -->
   <uses-permission android:name="android.permission.BLUETOOTH"
     android:maxSdkVersion="30" />
   <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"
@@ -10,11 +10,12 @@
   <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"
     android:maxSdkVersion="30" />
 
-  <!-- Permissions for Android 12 and above -->
+  <!-- Permissions for Android 12+ (API level 31+) -->
+  <!-- Scan for nearby Bluetooth devices without location permission -->
   <uses-permission android:name="android.permission.BLUETOOTH_SCAN"
     android:usesPermissionFlags="neverForLocation" />
+  <!-- Connect to paired Bluetooth devices -->
   <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
-
-  <!-- For location-based Bluetooth scanning on Android 12+ -->
-  <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+  <!-- Advertise to nearby Bluetooth devices (if needed for future features) -->
+  <uses-permission android:name="android.permission.BLUETOOTH_ADVERTISE" />
 </manifest>
